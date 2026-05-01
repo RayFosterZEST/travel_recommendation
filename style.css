@@ -42,9 +42,15 @@ body{
 }
 
 #searchContainer button{
-    background-color:var(--primary);
-    border-radius:100px;
     margin-left:5px;
+}
+button{
+    background-color:var(--primary);
+    border-radius:50px;
+    padding:5px 15px 5px 15px;
+    color:white;
+    border-style:none;
+
 }
 
 #heroContent{
@@ -65,4 +71,9 @@ body{
 #heroSocials img{
     width: 30px;
     filter:invert(1)
+}
+
+#heroHomepage{
+    max-width:500px;
+    padding-left:30px;
 }
