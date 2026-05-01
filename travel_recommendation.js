@@ -14,6 +14,8 @@ const fetchJSONFile = function(){
 }
 
 async function renderSearch(items){
+    document.getElementById('searchResultsContainer').hidden=false;
+
     const searchResults = document.getElementById('searchResults');
     if(items.length>0){
         let searchHTML = "";
@@ -53,10 +55,15 @@ async function searchLocation(){
         case 'temple':searchResults=results.temples;break;
         case 'church':searchResults = results.temples;break;
     }
-    
     for(let country of results.countries){
         if(country.name.toLowerCase()===keySearch)searchResults = country.cities;
     }
-
     renderSearch(searchResults)
+}
+
+
+async function clearResults(){
+    document.querySelector('#searchInput').value="";
+    document.querySelector('#searchResultsContainer').hidden=true;
+    document.querySelector('#searchResults').innerHTML="";
 }

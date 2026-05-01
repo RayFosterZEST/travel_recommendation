@@ -17,13 +17,13 @@
             <a href="./about-us.html">About Us</a>
             <a href="./contact-us.html">Contact Us</a>
         </div>
-        <div id="searchContainer">
+        <div id="searchContainer" >
             <input id="searchInput" placeholder="Search a location"/>
             <button id="searchBtn" onClick="searchLocation(this)">Search</button>
-            <button id="clearBtn">Clear</button>
+            <button id="clearBtn" onClick="clearResults()">Clear</button>
         </div>
     </div>
-    <div id="searchResultsContainer">
+    <div id="searchResultsContainer" hidden>
         <h2>Search Results</h2>
         <div id="searchResults"></div>
 
