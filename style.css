@@ -1,9 +1,54 @@
-
+body{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:  "wdth" 100;
+    color:white;
+    margin:0;
+}
 #navBar{
     width:100%;
-    background-color:black;
+    background-color:blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navBar div{
+    display:flex;
+    align-items:center;
+    margin:10px;
 }
 
 #logoContainer img{
     width:100px;
+}
+
+#linksContainer a{
+    padding:5px;
+    color:white;
+}
+
+#searchContainer{
+    height:20px;
+    background:white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#searchContainer button{
+    background-color:#4466ff;
+    border-radius:100px;
+    margin-left:5px;
+}
+
+
+#heroSocials{
+
+}
+
+#heroSocials img{
+    width: 30px;
+    filter:invert(1)
 }
