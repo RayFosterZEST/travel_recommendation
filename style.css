@@ -73,7 +73,43 @@ button{
     filter:invert(1)
 }
 
+
+/*Home page*/
 #heroHomepage{
     max-width:500px;
     padding-left:30px;
+}
+
+
+/*About page*/
+#teamContainer{
+    display:flex;
+    justify-content: space-around;
+    margin-top:100px;
+}
+
+.teamMember{
+    max-width:200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.teamMember img{
+    width:70px;
+    background-color:white;
+    border-radius:500px;
+    margin:auto;
+}
+
+.personName{
+    font-size:1.3em;
+    font-weight:900;
+}
+
+.personTitle{
+    margin-top:10px;
+    background-color:var(--primary);
+    padding:10px 5px 10px 5px;
+    border-radius:10px
 }
