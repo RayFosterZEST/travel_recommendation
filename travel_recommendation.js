@@ -41,7 +41,7 @@ async function renderSearch(items){
             }
             searchHTML+=`
             <div class="searchResultItem">
-                <img src="${item?.imageUrl}" class="searchURL" />
+                <img src="${item?.imageUrl}" alt="URL to image: ${item?.imageUrl}" class="searchURL" />
                 <h3>${item?.name || 'Error'}</h3>
                 <p>${item?.description}</p>
                 ${timeString!==""?`Current Time: ${timeString}`:""}
@@ -66,6 +66,7 @@ async function searchLocation(){
     const keySearch = searchQuery.toLowerCase();
 
     let searchResults = [];
+    let countriesFlag = false;
 
     switch(keySearch){
         case 'beach': searchResults = results.beaches;break;
@@ -74,9 +75,21 @@ async function searchLocation(){
         case 'temples':searchResults=results.temples;break;
         case 'temple':searchResults=results.temples;break;
         case 'church':searchResults = results.temples;break;
+        case 'countries':countriesFlag=true;break;
+        case 'country':countriesFlag=true;break;
+        case 'place':countriesFlag=true;break;
+
     }
     for(let country of results.countries){
         if(country.name.toLowerCase()===keySearch)searchResults = country.cities;
+    }
+    if(countriesFlag){
+        for(let country of results.countries){
+            console.log(country)
+            for(let city of country.cities){
+                searchResults.push(city);
+            }
+        }
     }
     renderSearch(searchResults)
 }
