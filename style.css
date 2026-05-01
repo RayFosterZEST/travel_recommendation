@@ -9,7 +9,7 @@ body{
 }
 #navBar{
     width:100%;
-    background-color:blue;
+    background-color:var(--primary);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,6 +30,10 @@ body{
     color:white;
 }
 
+:root{
+    --primary: #3a787a;
+}
+
 #searchContainer{
     height:20px;
     background:white;
@@ -38,14 +42,24 @@ body{
 }
 
 #searchContainer button{
-    background-color:#4466ff;
+    background-color:var(--primary);
     border-radius:100px;
     margin-left:5px;
 }
 
+#heroContent{
+    background-image: url('./images/skyline.jpg');
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+}
 
 #heroSocials{
-
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding:20px;
 }
 
 #heroSocials img{
