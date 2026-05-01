@@ -1,3 +1,16 @@
+const timeZones = {
+    'Sydney, Australia': "Australia/Sydney",
+    "Melbourne, Australia": "Australia/Melbourne",
+    "Tokyo, Japan": "Asia/Tokyo",
+    "Kyoto, Japan": "Asia/Tokyo",
+    "São Paulo, Brazil": "America/Sao_Paulo",
+    "Rio de Janeiro, Brazil": "America/Sao_Paulo",
+    "Bora Bora, French Polynesia": "Pacific/Tahiti",
+    "Copacabana Beach, Brazil": "America/Sao_Paulo",
+    "Angkor Wat, Cambodia": "Asia/Phnom_Penh",
+    "Taj Mahal, India": "Asia/Kolkata"
+  };
+
 
 const fetchJSONFile = function(){
     return new Promise(function(resolve,reject){
@@ -20,11 +33,18 @@ async function renderSearch(items){
     if(items.length>0){
         let searchHTML = "";
         for(let item of items){
+            let timeString = "";
+            if(timeZones[item?.name]){
+                const timeOptions = {timeZone:timeZones[item.name], hour:'numeric',minute:'numeric'};
+                console.log(timeOptions)
+                timeString = new Date().toLocaleTimeString('en-GB',timeOptions);
+            }
             searchHTML+=`
             <div class="searchResultItem">
                 <img src="${item?.imageUrl}" class="searchURL" />
                 <h3>${item?.name || 'Error'}</h3>
                 <p>${item?.description}</p>
+                ${timeString!==""?`Current Time: ${timeString}`:""}
             </div>
             `
         }
