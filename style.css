@@ -113,3 +113,19 @@ button{
     padding:10px 5px 10px 5px;
     border-radius:10px
 }
+
+/*Contact*/
+#contactContent{
+    display:flex;
+}
+
+#contactForm{
+    display:flex;
+    flex-direction: column;
+    row-gap:30px;
+    max-width:300px;
+}
+
+#contactForm input, textarea{
+    
+}
